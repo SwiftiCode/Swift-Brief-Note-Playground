@@ -8,7 +8,7 @@
 //:
 //: **Print to Console**
 //:
-//: To print text use print function print("Enter some text here")
+//: To print text, use print function. Such as print("Enter some text here")
 print ("Hello Word!")
 //:
 //: We can also assign the message to a string variable as follows:
@@ -22,16 +22,16 @@ let someVar1 = 6; let someVar2 = 23.4 // Semi-colon is required in this situatio
 //:
 //: **Create Constants**
 //:
-//: We use keyword `let` to create constant - values that will not change
-//: Constant must be declared before being used.
+//: + We use keyword `let` to create constant - values that will not change
+//: + Constant must be declared before being used.
 let constant1 = 23
 constant1
 //constant1 = 43 // This line will caused error as constant cannot be reassigned
 
 //: **Create Variable**
 //:
-//: We use keyword `var` to create variable - values that will be changed from time to time
-//: Variable must be declared before being use
+//: + We use keyword `var` to create variable - values that will be changed from time to time
+//: + Variable must be declared before being use
 var variable1 = 45
 variable1
 variable1 = 76
@@ -94,7 +94,7 @@ variable6
 let variable7 = String(variable6)
 variable7
 
-//: We can include variable inside our print function using \(expression)
+//: We can include variable inside our print function using \\(expression)
 
 let store1 = 25
 let store2 = 54
