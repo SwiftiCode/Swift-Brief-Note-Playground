@@ -39,7 +39,7 @@ variable1
 
 //: **Variables & Type Inference**
 //:
-//: Swift is a type safe language. We must assign a correct value that is suitable for the data type of a variable. Swift will flag any unmatch type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning values to a variable. For integer and floating point, Int and Double will be the preferred default. If we provide an expression instead of literal value, the system will infer the most appropriate data type for us.
+//: Swift is a type safe language. We must assign a correct value that is suitable for the data type of a variable. Swift will flag any un-match type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning values to a variable. For integer and floating point, Int and Double will be the preferred default. If we provide an expression instead of literal value, the system will infer the most appropriate data type for us.
 var variable2 = 26
 variable2
 variable2 = 64
