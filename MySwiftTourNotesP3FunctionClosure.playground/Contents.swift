@@ -28,6 +28,7 @@ printHello("Alex")
 
 
 //: The following function requires one string argument and it return another string argument.
+
 func printHi2(name: String) ->String
 {
     return "Hello \(name), have a good day."
@@ -68,13 +69,13 @@ result.average
 result.count
 result.sum
 
-//: We can also use number instead of name. The sequence of number is in the same order as the return vaue starting with 0. See example below:
+//: We can also use number instead of name. The sequence of number is in the same order as the return value starting with 0. See example below:
 result.0 // Sum
 result.1 // Count
 result.2 // Average
 
 
-//: Considering the example above, lets say the your data set is small but the count in the data set may varies. Instead of using array, we can create a function that accept a set of integers with variable quntity. To indicate the variable quantity of data set we use `...` after the data type in the argument. See example below:
+//: Considering the example above, lets say the your data set is small but the count in the data set may varies. Instead of using array, we can create a function that accept a set of integers with variable quantity. To indicate the variable quantity of data set we use `...` after the data type in the argument. See example below:
 
 func sumAll2(dataSet: Int...) -> (sum:Int, count: Int, average: Double)
 {
@@ -138,15 +139,15 @@ result5.average
 
 //: We can also created nested functions
 //:
-//: The following example use the common computation of voltage = current X resistence
+//: The following example use the common computation of voltage = current X resistance
 //: The computation is as follows:
-//:     voltage = current X resistence
-//:     current = voltage / resistence
-//:     resistence = voltage / current
+//:     voltage = current X resistance
+//:     current = voltage / resistance
+//:     resistance = voltage / current
 //:
 //: Instead of creating 3 different function, we create a main function that accept input base on the formula above. input1 is the first value and input2 is the second value.
 //:
-//: The main function also accept a ask code, if you are asking for voltage use "v", if you are asking for current use "i" and if you are asking for resistence use "r"
+//: The main function also accept an ask code, if you are asking for voltage use "v", if you are asking for current use "i" and if you are asking for resistance use "r"
 //:
 //: In this example, we nest the 3 function into a main function. In the main function user need to input the first value and second value together with ask code.
 //:
@@ -171,10 +172,10 @@ func produceVIR(input1: Double, input2: Double, ask: String ) -> Double?
     }
     
     switch ask {
-        case "v": returnV(input1, inputR: input2)
-        case "i": returnI(input1, inputR: input2)
-        case "r": returnR(input1, inputI: input2)
-        default: print("code not recognize")
+    case "v": returnV(input1, inputR: input2)
+    case "i": returnI(input1, inputR: input2)
+    case "r": returnR(input1, inputI: input2)
+    default: print("code not recognize")
     }
     
     return answer
@@ -203,7 +204,7 @@ let myV3 = 240.0
 let myI3 = 0.001
 if let myR3 = produceVIR(myV3, input2: myI3, ask: "r")
 {
-    print("The resistence with voltage of \(myV3)v and \(myI3)A is \(myR3)ohm")
+    print("The resistance with voltage of \(myV3)v and \(myI3)A is \(myR3)ohm")
 } else {
     print("Something wrong with your ask code. The system can only accept i, r or v in lower case")
 }
@@ -212,7 +213,7 @@ let myV4 = 240.0
 let myI4 = 0.001
 if let myR4 = produceVIR(myV4, input2: myI4, ask: "g")
 {
-    print("The resistence with voltage of \(myV4)v and \(myI4)A is \(myR4)ohm")
+    print("The resistance with voltage of \(myV4)v and \(myI4)A is \(myR4)ohm")
 } else {
     print("Something wrong with your ask code. The system can only accept i, r or v in lower case")
 }
@@ -273,7 +274,7 @@ halfcube(5, 3)
 //: In this example, we just input ask string and we get return as a function
 func produceVIRFormula(ask: String ) -> ((Double, Double) -> Double)?
 {
- 
+    
     
     func returnV(inputI: Double, inputR: Double) -> Double
     {
@@ -325,7 +326,7 @@ let myI7 = 0.001
 if let myFormula7 = produceVIRFormula("r")
 {
     let myR7 = myFormula7(myV7, myI7)
-    print("The resistence with voltage of \(myV7)v and \(myI7)A is \(myR7)ohm")
+    print("The resistance with voltage of \(myV7)v and \(myI7)A is \(myR7)ohm")
 } else {
     print("Something wrong with your ask code. The system can only accept i, r or v in lower case")
 }
@@ -335,7 +336,7 @@ let myI8 = 0.001
 if let myFormula8 = produceVIRFormula("j")
 {
     let myR8 = myFormula8(myV8, myI8)
-    print("The resistence with voltage of \(myV8)v and \(myI8)A is \(myR8)ohm")
+    print("The resistance with voltage of \(myV8)v and \(myI8)A is \(myR8)ohm")
 } else {
     print("Something wrong with your ask code. The system can only accept i, r or v in lower case")
 }
@@ -345,7 +346,7 @@ let myI9 = 0.0
 if let myFormula9 = produceVIRFormula("r")
 {
     let myR9 = myFormula9(myV9, myI9)
-    print("The resistence with voltage of \(myV9)v and \(myI9)A is \(myR9)ohm")
+    print("The resistance with voltage of \(myV9)v and \(myI9)A is \(myR9)ohm")
 } else {
     print("Something wrong with your ask code. The system can only accept i, r or v in lower case")
 }
@@ -354,7 +355,7 @@ if let myFormula9 = produceVIRFormula("r")
 
 //: A function can take another function as one if its argument
 //:
-//: In the following example, we have a function to check if a number is even and we have a function called processData. We use processData to accept a list of numbers and we accept a functionas argument to evaluate a list. Any function that accept Int and produce a boolean is acceptable.
+//: In the following example, we have a function to check if a number is even and we have a function called processData. We use processData to accept a list of numbers and we accept a function as argument to evaluate a list. Any function that accept Int and produce a boolean is acceptable.
 //:
 
 func isEven (number: Int) -> Bool {
@@ -396,14 +397,14 @@ processData(sampleData, evaluate: isEven)
 //:
 //:     { (argument: datatype) -> returnDataType in
 //:       ...the rest of the code... }
-//: 
+//:
 //: We use closure to implement a generic function. For example, an array has a map function that accepts closure. You can apply any type of code in this map method. The map method will iterate through every element in the array and applied the closure you supply to each element
 //:
 
 //: The following closure just add 1 for each element
 let myArrayNumbers = [1, 2, 3, 4, 5]
 let newArray1 = myArrayNumbers.map({ (no: Int) -> Int in
-                    return no + 1})
+    return no + 1})
 
 newArray1
 myArrayNumbers
@@ -421,14 +422,14 @@ let newArray3 = myArrayNumbers.map({ (no: Int) -> Int in
     if no % 2 == 0 {
         return no }
     else { return 0 }
-    })
+})
 
 newArray3
 myArrayNumbers
 
 //: **Simplified Closure**
 //:
-//: We can simplified the previous clsoure as follows:
+//: We can simplified the previous closure as follows:
 let newArray4 = myArrayNumbers.map({ (no: Int) -> Int in return no * 14})
 newArray4
 //: When a closure type is known, we can simplified it by omitting the argument type and return type
@@ -444,4 +445,4 @@ newArray7
 let newArray8 = myArrayNumbers.map{ $0 * 14 }
 newArray8
 
-
+/* ---- End ---- */
