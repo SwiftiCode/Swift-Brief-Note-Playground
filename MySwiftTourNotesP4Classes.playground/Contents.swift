@@ -1,8 +1,7 @@
 import UIKit
-//:
 // import UIKit for math function
 //:
-//: ##Objects and Classes
+//: ## Objects and Classes
 //:
 //: **Create Classes**
 //:
@@ -21,15 +20,16 @@ class Hi
 }
 
 //: + To create an instance of a class, we use className()
-//: + We can assign instance like constant or variable
+//: + We can assign instance to constant or variable
 //: + To read or write the property of a class, we use period (.)
 //:
-//:     objectName.propertyName //read
-//:     objectName.propertyName = newValue  //write
+//:        objectName.propertyName //read
+//:
+//:        objectName.propertyName = newValue  //write
 //:
 //: + To call the method of a class we use period (.) follow by parentheses ()
 //:
-//:     objectName.methodA()
+//:        objectName.methodA()
 //:
 
 var hiObj1 = Hi()
@@ -54,13 +54,13 @@ objCircle1.circumference()
 
 //: **Initialization**
 //:
-//: + All classes need initialization. This means that all properties in a class must be initialized, or all properties must have a have assigned.
+//: + All classes need initialization. This means that all properties in a class must be initialized, or all properties must have an assigned value.
 //: + We accomplish such initialization by 2 methods: 
 //: + The first method is to assigned a value immediately during declaration
 //: + Another method is to assigned value by taking input from user using `init()`
 //: + We use self.propertyName to refer to the current instance.
 //:
-//: The following example require use of the class to initialized the instance first before using the instance
+//: The following example require the use of the class to initialized the instance first before using the instance
 
 class Circle2 {
     
@@ -414,15 +414,15 @@ obj1?.circumference
 
 //: In the above example, when you assign obj2 with obj1, obj1 just pass its object reference to obj2.
 //: 
-//: Both obj2 are refering to the same instance/object.
+//: Both obj1 and obj2 are referring to the same instance/object.
 //:
-//: Also notice that we declared obj2 as constant but we can still modified the properties inside obj2.
+//: Also notice that although we declared obj2 as a constant, we can still modified the properties inside obj2.
 //: This happens because obj2 stored not the object but the reference address of the instances created by obj1.
 //: However, you cannot assign other instance to obj2 again since it is a constant.
 
 //:
 //: The most exciting about class and instances is its ability to act as object in the super class or sub class.
-//: For example, we have another class called MainCircle, a sub class called MainCylinder which inherit from MainCircle and a subclass called Cone, also inherit from MainCircle. We can mixed instances to 2 types (MainCylinder and Cone) and act as circle, however, we cannot mixed and down cast both as cylinder or cone.
+//: For example, we have another class called MainCircle, a sub class called MainCylinder which inherit from MainCircle and a subclass called Cone, which also inherit from MainCircle. We can mixed instances to 2 types (MainCylinder and Cone) and act as circle, however, we cannot mixed and down cast both as cylinder or cone.
 
 
 class MainCircle {
@@ -506,4 +506,6 @@ for eachObject in arrayRoundObject {
     }
     
 }
+
+/* ---- End ---- */
 

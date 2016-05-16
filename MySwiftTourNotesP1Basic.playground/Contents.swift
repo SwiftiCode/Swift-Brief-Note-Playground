@@ -23,15 +23,15 @@ let someVar1 = 6; let someVar2 = 23.4 // Semi-colon is required in this situatio
 //: **Create Constants**
 //:
 //: + We use keyword `let` to create constant - values that will not change
-//: + Constant must be declared before being used.
+//: + Constants must be declared before being used.
 let constant1 = 23
 constant1
-//constant1 = 43 // This line will caused error as constant cannot be reassigned
+//constant1 = 43 // This line will caused error as constant cannot be re-assigned
 
 //: **Create Variable**
 //:
 //: + We use keyword `var` to create variable - values that will be changed from time to time
-//: + Variable must be declared before being use
+//: + Variables must be declared before being use
 var variable1 = 45
 variable1
 variable1 = 76
@@ -39,7 +39,9 @@ variable1
 
 //: **Variables & Type Inference**
 //:
-//: Swift is a type safe language. We must assign a correct value that is suitable for the data type of a variable. Swift will flag any un-match type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning values to a variable. For integer and floating point, Int and Double will be the preferred default. If we provide an expression instead of literal value, the system will infer the most appropriate data type for us.
+//: Swift is a type safe language. We must assign a value that fits the data type of a variable. Swift will flag any un-match type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning different values to a same variable.
+//:
+//: For integer and floating point, Int and Double will be the preferred default. If we provide an expression instead of literal value, the system will infer the most appropriate data type for us.
 var variable2 = 26
 variable2
 variable2 = 64
@@ -51,7 +53,7 @@ let variable2a = 25 * 1.0 // The variable2a will be automatically declared as Do
 
 //: **Specified a Type Explicitly**
 //:
-//: Programmers can explicitly provide the variable type by providing a colon follow by type after the variable name
+//: Programmers can explicitly define the variable type by providing a colon follow by the data type after the variable name
 let variable3:Double = 54
 variable3
 let variable4:Float = 4
@@ -112,7 +114,7 @@ print(message5)
 
 
 
-//: ## Arrays and Dictionaries
+//: ## Collections: Arrays and Dictionaries
 //: **Arrays**
 //:
 //: To create arrays, we use brackets [] to include items in an array such as: var arrayName = ["item1", "item2"....."lastitem"]. Please note that index start with 0
