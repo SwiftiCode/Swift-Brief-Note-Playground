@@ -50,10 +50,10 @@ if checksum2 { print("0k") }  else { print("Not OK") }
 //: **Optional Variable**
 //:
 //: Now, we would like to introduce optionals. Optionals are variable that could be nil (no value at all). The syntax of these variables are added with ? after the variable names.
-//: var someData = 12 is not optional
-//: var someData: Int? is optional
+//: + var someData = 12 is not optional
+//: + var someData: Int? is optional
 //:
-//: To test optional we use a few method, one of them is to use ?? as conditional test, if test failed, a substitute will be use
+//: To test optional we use a few method, one of them is to use ?? as conditional test, if test failed, a substitute will be use.
 //: See example below:
 
 let someVar3: Int? = nil
@@ -92,7 +92,8 @@ else
 }
 //: If the optional is nil, the let statement is false thus it will skipped to else statement
 //:
-//: Note: Both methods of testing optional are very common in Swift programming. If an optional must not be nil then we should use `??` to substitute a default value if the optional happen to be nil.
+//: Note: Both methods of testing optional are very common in Swift programming. If an optional must not be nil then we should use `??` to substitute a default value when the optional happens to be nil.
+//:
 //: If we just want to trap an error using optional than we should use `if` and `let` method.
 //:
 //:
@@ -207,10 +208,10 @@ print(total)
 
 //: We can also have nested loop using `for` and `in`
 //:
-//: We can use range indicator such as `..<` or `...`.
-//: For example, we use 0..<100 to indicate a range of number 0 to 99. This statement include 0 but exclude 100.
-//: We use 0...100 to indicate the range of number 0 to 100.
-//: To exclude the lower range we can just start the lower value from where we want such as: 1..<99 to exclude 0.
+//: + We can use range indicator such as `..<` or `...`.
+//: + For example, we use 0..<100 to indicate a range of number 0 to 99. This statement include 0 but exclude 100.
+//: + We use 0...100 to indicate the range of number 0 to 100.
+//: + To exclude the lower range we can just start the lower value from where we want such as: 1..<99 to exclude 0.
 
 for number1 in 0..<100 {
     
@@ -257,7 +258,7 @@ while n1 <= 100 {
 print(sum1)
 
 
-//: Our next example use `repeat` and `while`. This is similar with do-while, just replace do with repeat
+//: Our next example use `repeat` and `while`. This is similar with do-while, just replace `do` with `repeat`
 
 var sum2 = 0
 var n2 = 1
