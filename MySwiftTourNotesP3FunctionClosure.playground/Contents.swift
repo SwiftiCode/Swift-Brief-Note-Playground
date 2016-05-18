@@ -75,7 +75,7 @@ result.1 // Count
 result.2 // Average
 
 
-//: Considering the example above, lets say the your data set is small but the count in the data set may varies. Instead of using array, we can create a function that accept a set of integers with variable quantity. To indicate the variable quantity of data set we use `...` after the data type in the argument. See example below:
+//: Considering the example above, if our data set is small but the numbers of data point in the data set may varies. Instead of using array, we can create a function that accept a set of integers with variable quantity. To indicate the variable quantity of data set we use `...` after the data type in the argument. See example below:
 
 func sumAll2(dataSet: Int...) -> (sum:Int, count: Int, average: Double)
 {
@@ -103,7 +103,7 @@ result3.count
 result3.sum
 result3.average
 
-//: If we look at the example below, we create a result without entering any data set in this case count and sum return a zero but average return nan. This is because in Swift 0/0 will return nan (NotANumber)
+//: If we look at the example below, we create a return result without entering any data set. In this case, count and sum return a zero but average return nan. This is because in Swift 0/0 will return nan (NotANumber)
 let result4 = sumAll2()
 result4.count
 result4.sum
@@ -141,15 +141,16 @@ result5.average
 //:
 //: The following example use the common computation of voltage = current X resistance
 //: The computation is as follows:
+//:
 //:     voltage = current X resistance
 //:     current = voltage / resistance
 //:     resistance = voltage / current
 //:
-//: Instead of creating 3 different function, we create a main function that accept input base on the formula above. input1 is the first value and input2 is the second value.
+//: + Instead of creating 3 different function, we create a main function that accept input base on the formula above. input1 is the first value and input2 is the second value.
 //:
-//: The main function also accept an ask code, if you are asking for voltage use "v", if you are asking for current use "i" and if you are asking for resistance use "r"
+//: + The main function also accept an ask code, if you are asking for voltage use "v", if you are asking for current use "i" and if you are asking for resistance use "r"
 //:
-//: In this example, we nest the 3 function into a main function. In the main function user need to input the first value and second value together with ask code.
+//: + In this example, we nest the 3 function into a main function. In the main function user need to input the first value and second value together with ask code.
 //:
 //: See example below:
 func produceVIR(input1: Double, input2: Double, ask: String ) -> Double?
