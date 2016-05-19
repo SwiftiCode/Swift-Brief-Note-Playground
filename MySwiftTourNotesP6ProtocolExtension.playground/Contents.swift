@@ -98,7 +98,7 @@ let student2 = Student(lastName: "Hopkin", firstName: "Tom", studentID: "A122164
 student2.printScreen()
 student2.studentFullName
 
-//: A protocol can contain function and variables, please note that properties in protocol is similar to compyed properties, you need to specify `set` and/or `get` for each properties
+//: A protocol can contain function and variables, please note that properties in protocol is similar to computed properties, you need to specify `set` and/or `get` for each properties
 
 protocol SampleProtocol {
     var capitalTextGet: String {get}
@@ -180,7 +180,7 @@ mySampleStruct1.someNumberGetSet
 mySampleStruct1.displayText()
 mySampleStruct1.time2Number(8)
 
-//: Please also note that we need to add a keyword to `mutating` to function that modified the structure itself. This is specific to structure and do not applied to classes. In addition we need to add `mutating` to the function during protocol definition. If we plan for developers to adopt the protocol in structures and the functions involved in modifiying the properties. It is better to add the `mutating` keyword in front of the affected function.
+//: Please also note that we need to add a keyword to `mutating` to function that modified the structure itself. This is specific to structures and do not applied to classes. In addition we need to add `mutating` to the function during protocol definition. If we plan for developers to adopt the protocol in structures and the functions involved in modifiying the properties. It is better to add the `mutating` keyword in front of the affected function.
 
 //: Creating enumeration with the adoption of protocol
 enum SampleNum: SampleProtocol {
@@ -275,4 +275,6 @@ extension SomeClass2: SampleProtocol {
 }
 
 //: If we use protocol adoption in an extension, we must make sure that all properties in the protocol must be setup as computed properties with get and set clearly define.
+
+/* ---- End ---- */
 
