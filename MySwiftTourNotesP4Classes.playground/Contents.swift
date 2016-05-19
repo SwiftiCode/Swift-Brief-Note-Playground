@@ -60,7 +60,7 @@ objCircle1.circumference()
 //: + Another method is to assigned value by taking input from user using `init()`
 //: + We use self.propertyName to refer to the current instance.
 //:
-//: The following example require the use of the class to initialized the instance first before using the instance
+//: The following example require user to initialized the instance first before we can use the object.
 
 class Circle2 {
     
@@ -421,7 +421,7 @@ obj1?.circumference
 //: However, you cannot assign other instance to obj2 again since it is a constant.
 
 //:
-//: The most exciting about class and instances is its ability to act as object in the super class or sub class.
+//: The most exciting about class and instances is its ability to act as same object in the super class. We can group objects under the same super class into a meaningful collection and perform functions or manipulate properties that are common between different objects.
 //: For example, we have another class called MainCircle, a sub class called MainCylinder which inherit from MainCircle and a subclass called Cone, which also inherit from MainCircle. We can mixed instances to 2 types (MainCylinder and Cone) and act as circle, however, we cannot mixed and down cast both as cylinder or cone.
 
 
