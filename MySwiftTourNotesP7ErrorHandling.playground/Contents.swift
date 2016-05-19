@@ -1,4 +1,4 @@
-//: ##Error Handling
+//: ## Error Handling
 //:
 //: + In, Swift, we use optional to test if a variable or instance is nil.
 //: + For functions and method, we use `throws` to see if the function or method works and cause of error.
@@ -140,8 +140,24 @@ func executeBuy2(transDetail: buyStuff) throws -> Bool {
     
 }
 
-let canBuy2 = try executeBuy2(transaction1)
-canBuy2
+user1.funds
+
+do {
+    let canBuy2 = try executeBuy2(transaction1)
+    if canBuy2 {
+        user1 = completeBuy(transaction1)
+    }
+} catch mySellError.soldOut {
+    print("Sorry! The item you want sold out! Return to cart!")
+} catch mySellError.insufficentFund {
+    print("Sorry! You do not have sufficient fund to purchase the item you want. Either the priceis higher than your available fund or the quantity you want is too much. Consider reducing your quantity. Return to cart!")
+} catch mySellError.doNotHaveSuchItem {
+    print("Sorry! We do not carry this item!")
+}
+
+user1.funds
+
+
 let canBuy3 = try executeBuy2(transaction2)
 canBuy3
 
