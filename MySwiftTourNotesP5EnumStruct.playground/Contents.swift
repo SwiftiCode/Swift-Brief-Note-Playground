@@ -4,7 +4,7 @@ import UIKit
 //:
 //: **Enumerations**
 //:
-//: To create enumerations use keyword `enum`
+//: To create enumerations, use keyword `enum`
 //:
 //: In Swift, we can associate methods in enumerations
 //:
@@ -20,7 +20,7 @@ Direction1.West.hashValue
 let east = Direction1.East
 east.hashValue
 
-//: By default Swift starts its enum hash value from 0. We can define the enum as above and use the elements above without considering the hash value if the underlying number is not important
+//: By default, Swift starts its enum hash value from 0. We can define the enum as above and use the elements above without considering the hash value if the underlying number is not important
 //:
 //: However, in cases where underlying number is important, we can need to set the starting number.
 enum Month1 {
@@ -30,7 +30,7 @@ enum Month1 {
 Month1.Jan.hashValue
 Month1.Jul.hashValue
 
-//: The example above shows that the hash value for the month not exactly right. If we need to utilize the underlying number, Swift allows us to reset the starting number. But first we need to define the raw data type first before we can assign start number.
+//: The example above shows that the hash value for months are not exactly right. If we need to utilize the underlying number, Swift allows us to reset the starting number. But first we need to define the raw data type first before we can assign start number.
 
 enum Month2: Int {
     case Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
@@ -53,7 +53,7 @@ Metric.metric.hashValue
 Metric.english.rawValue
 Metric.english.hashValue
 
-let userInput1 = 125.0
+let userInput1 = 130.0
 let userInputMetric = "n"
 if userInputMetric == Metric.english.rawValue {
     print("Your weight which is \(userInput1) pounds is \(userInput1 * 0.453592) kg.")
@@ -65,7 +65,7 @@ enum GotMetric {
     case no, yes
 }
 
-let userInput2 = 200.0
+let userInput2 = 250.0
 let userInputMetric2 = GotMetric.no
 if userInputMetric2 == GotMetric.no {
     print("Your weight which is \(userInput2) pounds is \(userInput2 * 0.453592) kg.")
@@ -95,9 +95,9 @@ Months.Jul.days()
 Months.Nov.days()
 Months.Feb.days()
 
-//: We can use init?(rawValue:) to craate an instance from raw value
+//: We can use init?(rawValue:) to create an instance from raw value
 //:
-//: Using the Months exmaple above
+//: Using the Months example above
 
 let sep = Months.init(rawValue: 9)
 sep
@@ -125,8 +125,8 @@ Direction.East.displayHeading()
 //: **Structure**
 //:
 //: In Swift, structures not only contain variables or constant, it can also include function. You can also initialize the structures and include computed properties.
-//: 
-//: The differences is that structures are copied when assigning to a instance variable whereas instances from objects are referenced.
+//:
+//: The difference between structures and class instances is that structures are copied when assigning to a instance variable whereas instances from objects are referenced.
 //:
 struct Circle {
     
@@ -190,7 +190,7 @@ var myMetric2 = Metric2.metric("aye")
 myMetric2 = Metric2.english("pounds")
 myMetric
 
-//: The above example is difference from the exmaple below where raw value is predefined. When you set raw value, all difference instances will be the same whereas associated value can be different.
+//: The above example is difference from the example below where raw value is predefined. When you set raw value, all difference instances will be the same whereas associated value can be different.
 
 enum Metric3: String {
     case metric = "y", english = "n"
@@ -204,3 +204,5 @@ myMetric3.rawValue
 
 var myMetric4 = Metric3.metric
 myMetric4.rawValue
+
+/* ---- End ---- */
