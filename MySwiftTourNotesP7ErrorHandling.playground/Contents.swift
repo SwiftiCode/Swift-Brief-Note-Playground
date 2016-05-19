@@ -117,6 +117,12 @@ user1.funds
 func executeBuy2(transDetail: buyStuff) throws -> Bool {
     if let buyItem = onlineInventory[transDetail.itemName] {
         
+        defer {
+            print("This code will be executed regardless if this function throws error!")
+        }
+        
+        print("First")
+        
         if transDetail.quantity > buyItem.stock {
             throw mySellError.soldOut
         }
@@ -127,9 +133,6 @@ func executeBuy2(transDetail: buyStuff) throws -> Bool {
             throw mySellError.insufficentFund
         }
         
-        defer {
-            print("This code will be executed regardless if this function throws error!")
-        }
 
         return true
         
@@ -150,7 +153,7 @@ do {
 } catch mySellError.soldOut {
     print("Sorry! The item you want sold out! Return to cart!")
 } catch mySellError.insufficentFund {
-    print("Sorry! You do not have sufficient fund to purchase the item you want. Either the priceis higher than your available fund or the quantity you want is too much. Consider reducing your quantity. Return to cart!")
+    print("Sorry! Insufficient fund")
 } catch mySellError.doNotHaveSuchItem {
     print("Sorry! We do not carry this item!")
 }
