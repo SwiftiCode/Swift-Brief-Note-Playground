@@ -2,11 +2,11 @@
 //:
 //: **Protocol**
 //:
-//: We can use protocol to provide a standard interface and the flexibility for protocol adopter to implement the details in their own way. We can introduce a protocol such as printing protocol and let any class instances, structures or any data type to adopt the features. While defining protocol, we standard the input and output but we leave the implementation details to the adopter.
+//: We can use protocol to provide a standard interface and the flexibility for protocol adopter to implement the details in their own way. We can introduce a protocol such as printing protocol and let any class instances, structures or any data type to adopt the features. While defining protocol, we standardized the input and output but we leave the implementation details to the adopter.
 //: 
 //: Another purpose of introducing protocol is to provide additional capabilities where it is less commonly use. For example, for a class called car, the additional features in a racing car is less commonly used. Although we can add these features by subclassing car, it may have to carry additional weight from the super class where those features are not applicable to racing cars. By using protocols we can use the superclass and adopt the racing car protocol for additional features.
 //:
-//: We can include computed properties and/or function in a protocol. For computed properties, we must define if the properties are settable and/or gettable only. For function, we just need to define the function name and perimeters.
+//: We can include computed properties and/or function in a protocol. For computed properties, we must define if the properties are settable and/or gettable. For function, we just need to define the function name and perimeters.
 //:
 //: We use `protocol` to create and define a protocol
 //:
@@ -180,7 +180,7 @@ mySampleStruct1.someNumberGetSet
 mySampleStruct1.displayText()
 mySampleStruct1.time2Number(8)
 
-//: Please also note that we need to add a keyword to `mutating` to function that modified the structure itself. This is specific to structures and do not applied to classes. In addition we need to add `mutating` to the function during protocol definition. If we plan for developers to adopt the protocol in structures and the functions involved in modifiying the properties. It is better to add the `mutating` keyword in front of the affected function.
+//: Please also note that we need to add a keyword `mutating` to functions that modifies the structure itself. This is specific to structures and do not applied to class instances. In addition we need to add `mutating` to the function during protocol definition. If we plan for developers to adopt the protocol in structures and the functions involved in modifiying the properties. It is better to add the `mutating` keyword in front of the affected function.
 
 //: Creating enumeration with the adoption of protocol
 enum SampleNum: SampleProtocol {
