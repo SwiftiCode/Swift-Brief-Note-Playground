@@ -39,7 +39,7 @@ variable1
 
 //: **Variables & Type Inference**
 //:
-//: Swift is a type safe language. We must assign a value that fits the data type of a variable. Swift will flag any un-match type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning different values to a same variable.
+//: Swift is a type safe language. We must assign a value that fits the data type of a variable. Swift will flag any un-match type. During constant or variable creation, the compiler will infers the data type of the constant or variable base on the type of its value. There is no need to define the data type explicitly. After the creation of a variable, the system will only allow values of the same type when reassigning different values to the same variable.
 //:
 //: For integer and floating point, Int and Double will be the preferred default. If we provide an expression instead of literal value, the system will infer the most appropriate data type for us.
 var variable2 = 26
@@ -86,7 +86,7 @@ let variable5f: String = "This is a string"
 
 //: **Data Type Conversion**
 //:
-//: To convert from one data type to another we must create a variable of our desire data type and explicitly convert the value using dataType() syntax.
+//: To convert from one data type to another we must create a variable of our desire data type and explicitly convert the value using dataType( ) syntax.
 
 
 let variable5 = 2564
@@ -231,13 +231,14 @@ alphabetList["H"]
 //: To find the index for a definition
 let indexForJuliet = alphabetList.indexForKey("J")
 indexForJuliet
-
+print(alphabetList[indexForJuliet!])
 //: To remove a definition by index
 alphabetList.removeAtIndex(indexForJuliet!)
-
+alphabetList[indexForJuliet!] // index will change since Juliet has been erased
 //: To remove a definition by key
 alphabetList.removeValueForKey("H")
 alphabetList.count
+alphabetList["H"]
 
 /*: ----- End ----- */
 

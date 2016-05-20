@@ -1,4 +1,4 @@
-//: ##Generics
+//: ## Generics
 //:
 //: Generics are those with unknown data type
 //: We can create genertic forms of function, class, methods, structure and enumeration
