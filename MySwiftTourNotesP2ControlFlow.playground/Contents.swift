@@ -53,7 +53,7 @@ if checksum2 { print("0k") }  else { print("Not OK") }
 //: + var someData = 12 is not optional
 //: + var someData: Int? is optional
 //:
-//: To test optional we use a few method, one of them is to use ?? as conditional test, if test failed, a substitute will be use.
+//: To test optional, we use two methods, one of them is to use ?? as conditional test, if test failed, a substitute will be use.
 //: See example below:
 
 let someVar3: Int? = nil
@@ -90,9 +90,11 @@ else
 {
     print("No Value")
 }
-//: If the optional is nil, the let statement is false thus it will skipped to else statement
+//: If the optional is nil, the let statement is false, thus it will skipped to else statement
 //:
-//: Note: Both methods of testing optional are very common in Swift programming. If an optional must not be nil then we should use `??` to substitute a default value when the optional happens to be nil.
+//: Note: Both methods of testing optional are very common in Swift programming. 
+//:
+//: If an optional must not be nil then we should use `??` to substitute a default value when the optional happens to be nil.
 //:
 //: If we just want to trap an error using optional, then we should use `if` and `let` method.
 //:
