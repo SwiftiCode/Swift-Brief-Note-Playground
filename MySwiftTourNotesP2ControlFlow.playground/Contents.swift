@@ -49,7 +49,7 @@ if checksum2 { print("0k") }  else { print("Not OK") }
 //:
 //: **Optional Variable**
 //:
-//: Now, we would like to introduce optionals. Optionals are variable that could be nil (no value at all). The syntax of these variables are added with ? after the variable names.
+//: Now, we would like to introduce optionals. Optionals are variable that could be nil (no value at all). The syntax of these variables are added with ? after the variable names and data type declaration.
 //: + var someData = 12 is not optional
 //: + var someData: Int? is optional
 //:
@@ -94,7 +94,7 @@ else
 //:
 //: Note: Both methods of testing optional are very common in Swift programming. If an optional must not be nil then we should use `??` to substitute a default value when the optional happens to be nil.
 //:
-//: If we just want to trap an error using optional than we should use `if` and `let` method.
+//: If we just want to trap an error using optional, then we should use `if` and `let` method.
 //:
 //:
 //: **Switches**
