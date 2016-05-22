@@ -499,7 +499,6 @@ class Cone: MainCircle {
     }
 }
 
-
 //:
 
 let arrayRoundObject = [MainCylinder(radius: 4.0, height: 10)!, MainCylinder(radius: 13.0, height: 16)!, Cone(radius:6.5, height: 14)!, Cone(radius: 7.5, height: 6.3)!]
