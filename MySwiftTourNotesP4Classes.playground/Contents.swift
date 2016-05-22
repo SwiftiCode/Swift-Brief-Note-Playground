@@ -27,7 +27,7 @@ class Hi
 //:
 //:        objectName.propertyName = newValue  //write
 //:
-//: + To call the method of a class we use period (.) follow by parentheses ()
+//: + To call the method of a class we use period (.) follow by the name of method and parentheses () with argument or without argument.
 //:
 //:        objectName.methodA()
 //:
@@ -54,7 +54,8 @@ objCircle1.circumference()
 
 //: **Initialization**
 //:
-//: + All classes need initialization. This means that all properties in a class must be initialized, or all properties must have an assigned value.
+//: + When creating an instance/object from a class, the properties must be initialized.
+//: + This means that all properties in a class must be initialized, or all properties must have an assigned value.
 //: + We accomplish such initialization by 2 methods: 
 //: + The first method is to assigned a value immediately during declaration
 //: + Another method is to assigned value by taking input from user using `init()`
@@ -85,6 +86,9 @@ objCircle2.myRadius
 objCircle2.circumference()
 objCircle2.area()
 
+//:
+//: **Sub Class**
+//:
 //: To create a subclass, we use the same class syntax follow by a colon and the name of superclass
 //: For initialization, we need to initialize the current properties before we can initialize the properties in the superclass.
 
@@ -204,7 +208,7 @@ objCircle4.area
 
 //: Computed properties in Swift class can have getter and setter
 //:
-//: In the example above, we need to create instance by providing a radius. However, if we have only the circumference or area. We can set those value and calculate the radius in reverse.
+//: In the example above, we need to create instance by providing a radius. However, if we have only the circumference or area. We can set those value and calculate the radius in reverse as shown in the following example.
 //:
 //: Please note that when using setter, we use `newValue` as the new value of the computed properties. The code will compute the radius in reverse.
 class Circle5 {
@@ -255,8 +259,8 @@ objCircle6.myRadius
 objCircle6.circumference
 objCircle6.area
 
-//: If we don't need computed properties but we would like to process some code before the variable will set and after the variable is set, we can use `willSet` an `didSet` keyword.
-//: When declaring variables, we can define how the variable will trigger some code.
+//: If we don't need computed properties but we would like to process some code before the variable is set and/or after the variable is set, we can use `willSet` an `didSet` keyword.
+//: We use `willSet` and `didSet` to define how the variable will trigger some code before or after it is set.
 
 class PersonalHealth {
     
@@ -322,17 +326,19 @@ myHealth1.metric
 myHealth1.heightMetric
 myHealth1.weightMetric
 myHealth1.bmi
-// In the above code, when you entered height and weight and the system detect that you have set the metric code to "e", it will automatically convert the height and weight to metric
+// In the above code, when you entered height and weight and the system detect that you have set the metric code to "e", it will automatically convert the height and weight to metric.
 
 
-//: In the example above, before a name is set, we show the welcome message with disclaimer. After a new name is set, we will set the height and weight to zero
+//: In the example above, before a name is set, we show the welcome message with disclaimer. After a new name is set, we will set the height and weight to zero.
 //:
-//: Whenever a height or weight is set, the system will check the metric code, if the code is equal to "e" (for English). The system will assume the data entered is in feet and pound and perform automatic convertion
+//: Whenever a height or weight is set, the system will check the metric code, if the code is equal to "e" (for English). The system will assume the data entered is in feet and pound and perform automatic convertion.
 
 //:
-//: When can use optional with instances, method, and properties
+//: **Optional Instance**
 //:
-//: Usually, we will include a optional marker `?` after init, so if initialization failed the instance will be nil
+//: We can use optional with instances, initialization, method, and properties.
+//:
+//: Usually, we will include a optional marker `?` after init, so if initialization failed the instance will be nil.
 //:
 class Circle6 {
     
@@ -376,7 +382,7 @@ myCircle2?.myRadius
 myCircle2?.area
 myCircle2?.circumference
 
-//: We can also use `if` `let` to check if object is nil as follows
+//: We can also use `if` and `let` to check if an object is nil as follows
 if let myCircle3 = Circle6(myRadius: 25) {
     print("Instances Set")
     myCircle3.myRadius
@@ -395,6 +401,9 @@ if let myCircle4 = Circle6(myRadius: 0) {
     print("error create object")
 }
 
+//:
+//: **Classes and Reference Type**
+//:
 //: Classes and its instances/objects are reference data type. This means that when you create an instance/object and you assign the instance with another variable, you just pass the reference to the second variable instead of copying the instance to another variable.
 
 let obj1 = Circle6(myRadius: 25.0)
@@ -420,6 +429,8 @@ obj1?.circumference
 //: This happens because obj2 stored not the object but the reference address of the instances created by obj1.
 //: However, you cannot assign other instance to obj2 again since it is a constant.
 
+//:
+//: **Polyphormism**
 //:
 //: The most exciting about class and instances is its ability to act as same object in the super class. We can group objects under the same super class into a meaningful collection and perform functions or manipulate properties that are common between different objects.
 //: For example, we have another class called MainCircle, a sub class called MainCylinder which inherit from MainCircle and a subclass called Cone, which also inherit from MainCircle. We can mixed instances to 2 types (MainCylinder and Cone) and act as circle, however, we cannot mixed and down cast both as cylinder or cone.
@@ -493,19 +504,21 @@ class Cone: MainCircle {
 
 let arrayRoundObject = [MainCylinder(radius: 4.0, height: 10)!, MainCylinder(radius: 13.0, height: 16)!, Cone(radius:6.5, height: 14)!, Cone(radius: 7.5, height: 6.3)!]
 //: Note: When creating an array such as the array above if your class init is optional then you need to add `!` at the end of init statement.
-
+var totalNumberOfObject = 0
 for eachObject in arrayRoundObject {
     print("Area is \(eachObject.area)")
     //print("Volume is \(eachObject.volume)") // This will produce error as now it recognize the object as super class MainCirlce
-    // To get volume we need to case each object into their respective type
+    // To get volume we need to cast each object into their respective type
     if let isCylinder = eachObject as? MainCylinder {
         print("This is cylinder, volume is \(isCylinder.volume)")
     }
     if let isCone = eachObject as? Cone {
         print("This is cone, volume is \(isCone.volume)")
     }
-    
+    totalNumberOfObject += 1
 }
+
+print("Total number of objects = \(totalNumberOfObject)")
 
 /* ---- End ---- */
 
