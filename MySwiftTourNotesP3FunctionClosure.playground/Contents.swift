@@ -267,8 +267,8 @@ func makeHalf() -> ((Double, Double) ->Double)
     return halfCube
 }
 
-var halfcube = makeHalf()
-halfcube(5, 3)
+var makeHalfcube = makeHalf()
+makeHalfcube(5, 3)
 
 //: Another example of using first class function and returning function as its value.
 //:
