@@ -22,7 +22,7 @@ east.hashValue
 
 //: By default, Swift starts its enum hash value from 0. We can define the enum as above and use the elements above without considering the hash value if the underlying number is not important
 //:
-//: However, in cases where underlying number is important, we need to set the starting number. But first lets look at enum if we do not set a starting number as shown below.
+//: However, in cases where underlying number is important, we need to set the starting number. But lets look at enum if we do not set a starting number as shown below.
 enum Month1 {
     case Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 }
@@ -140,7 +140,7 @@ var myMetric2 = Metric2.metric("aye")
 myMetric2 = Metric2.english("pounds")
 myMetric
 
-//: The above example is different from the example below where raw value is predefined. When you set raw value, all difference instances will be the same whereas associated value (example above) can be different.
+//: The above example is different from the example below where raw value is predefined. When you set raw value, all different instances will be the same whereas associated value (example above) can be different.
 
 enum Metric3: String {
     case metric = "y", english = "n"
