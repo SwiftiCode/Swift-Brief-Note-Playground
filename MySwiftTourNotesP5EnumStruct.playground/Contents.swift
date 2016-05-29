@@ -22,7 +22,7 @@ east.hashValue
 
 //: By default, Swift starts its enum hash value from 0. We can define the enum as above and use the elements above without considering the hash value if the underlying number is not important
 //:
-//: However, in cases where underlying number is important, we can need to set the starting number.
+//: However, in cases where underlying number is important, we need to set the starting number. But first lets look at enum if we do not set a starting number as shown below.
 enum Month1 {
     case Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 }
@@ -30,7 +30,7 @@ enum Month1 {
 Month1.Jan.hashValue
 Month1.Jul.hashValue
 
-//: The example above shows that the hash value for months are not exactly right. If we need to utilize the underlying number, Swift allows us to reset the starting number. But first we need to define the raw data type first before we can assign start number.
+//: The example above shows that the hash value for months are not exactly right. If we need to utilize the underlying number, Swift allows us to reset the starting number. But first we need to define the raw data type first before we can assign a start number.
 
 enum Month2: Int {
     case Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
@@ -40,9 +40,9 @@ Month2.Apr
 Month2.Jan.hashValue
 Month2.Jan.rawValue
 
-//: In the above example, since we define Int as its underlying raw value data type, we can set the raw value as per our preference. The hash value remain the same.
+//: In the above example, since we define `Int` as its underlying raw value data type, we can set the raw value as per our preference. The hash value remain the same.
 //:
-//: We can also define the raw value other than Int
+//: We can also define the raw value other than `Int`
 
 enum Metric: String {
     case metric = "y", english = "n"
@@ -122,6 +122,40 @@ enum Direction {
 
 Direction.East.displayHeading()
 
+
+//: When defining enumeration, we can create an enumeration without raw value and we can associated different value while creating different instance of enum.
+
+enum Metric2 {
+    case metric(String)
+    case english(String)
+}
+
+
+var myMetric = Metric2.metric("yes")
+myMetric
+myMetric = Metric2.english("english")
+myMetric
+
+var myMetric2 = Metric2.metric("aye")
+myMetric2 = Metric2.english("pounds")
+myMetric
+
+//: The above example is different from the example below where raw value is predefined. When you set raw value, all difference instances will be the same whereas associated value (example above) can be different.
+
+enum Metric3: String {
+    case metric = "y", english = "n"
+}
+
+var myMetric3 = Metric3.metric
+myMetric3.rawValue
+
+myMetric3 = Metric3.english
+myMetric3.rawValue
+
+var myMetric4 = Metric3.metric
+myMetric4.rawValue
+
+
 //: **Structure**
 //:
 //: In Swift, structures not only contain variables or constant, it can also include function. You can also initialize the structures and include computed properties.
@@ -170,39 +204,6 @@ s1.circumference
 s1.display()
 
 
-//: In the above example, when you assign s2 with s1, The entire structure is copied to s2.If you declared s2 as constant, it will be an exact copy of s1. If you declared s2 as variable you can modified s2 and the results of s2 and s1 will be different.
-
-
-//: For enumeration, we can create an enumeration without raw value and we associated different value while creating the instance.
-
-enum Metric2 {
-    case metric(String)
-    case english(String)
-}
-
-
-var myMetric = Metric2.metric("yes")
-myMetric
-myMetric = Metric2.english("english")
-myMetric
-
-var myMetric2 = Metric2.metric("aye")
-myMetric2 = Metric2.english("pounds")
-myMetric
-
-//: The above example is difference from the example below where raw value is predefined. When you set raw value, all difference instances will be the same whereas associated value can be different.
-
-enum Metric3: String {
-    case metric = "y", english = "n"
-}
-
-var myMetric3 = Metric3.metric
-myMetric3.rawValue
-
-myMetric3 = Metric3.english
-myMetric3.rawValue
-
-var myMetric4 = Metric3.metric
-myMetric4.rawValue
-
+//: In the above example, when you assign s2 with s1, the entire structure is copied to s2. If you declared s2 as constant, it will be an exact copy of s1. If you declared s2 as a variable, you can modified s2 and the results of s2 and s1 will be different after modification is done on s2.
+//:
 /* ---- End ---- */

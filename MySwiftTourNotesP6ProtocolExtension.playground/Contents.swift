@@ -2,7 +2,7 @@
 //:
 //: **Protocol**
 //:
-//: We can use protocol to provide a standard interface and the flexibility for protocol adopter to implement the details in their own way. We can introduce a protocol such as printing protocol and let any class instances, structures or any data type to adopt the features. While defining protocol, we standardized the input and output but we leave the implementation details to the adopter.
+//: We can use protocol to provide a standard interface for other developer to adopt its API. Protocol also allow the flexibility for protocol adopter to implement details in their own way. We can introduce a protocol such as printing protocol and let any class instances, structures or any data type to adopt the features. While defining protocol, we standardized the input and output but we leave the implementation details to the adopter.
 //:
 //: Another purpose of introducing protocol is to provide additional capabilities where it is less commonly use. For example, for a class called car, the additional features in a racing car is less commonly used. Although we can add these features by subclassing car, it may have to carry additional weight from the super class where those features are not applicable to racing cars. By using protocols we can use the superclass and adopt the racing car protocol for additional features.
 //:
