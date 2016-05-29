@@ -158,7 +158,7 @@ myMetric4.rawValue
 
 //: **Structure**
 //:
-//: In Swift, structures not only contain variables or constant, it can also include function. You can also initialize the structures and include computed properties.
+//: In Swift, structures not only contain variables or constant, it can also include function. We can also initialize the structures and include computed properties.
 //:
 //: The difference between structures and class instances is that structures are copied when assigning to a instance variable whereas instances from objects are referenced.
 //:
@@ -205,5 +205,5 @@ s1.display()
 
 
 //: In the above example, when you assign s2 with s1, the entire structure is copied to s2. If you declared s2 as constant, it will be an exact copy of s1. If you declared s2 as a variable, you can modified s2 and the results of s2 and s1 will be different after modification is done on s2.
-//:
+
 /* ---- End ---- */
