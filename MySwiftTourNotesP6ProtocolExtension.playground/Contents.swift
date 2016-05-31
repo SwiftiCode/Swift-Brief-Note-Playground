@@ -4,8 +4,6 @@
 //:
 //: We can use protocol to provide a standard interface for other developer to adopt its API. Protocol also allow the flexibility for protocol adopter to implement details in their own way. We can introduce a protocol such as printing protocol and let any class instances, structures or any data type to adopt the features. While defining protocol, we standardized the input and output but we leave the implementation details to the adopter.
 //:
-//: Another purpose of introducing protocol is to provide additional capabilities where it is less commonly use. For example, for a class called car, the additional features in a racing car is less commonly used. Although we can add these features by subclassing car, it may have to carry additional weight from the super class where those features are not applicable to racing cars. By using protocols we can use the superclass and adopt the racing car protocol for additional features.
-//:
 //: We can include computed properties and/or function in a protocol. For computed properties, we must define if the properties are settable and/or gettable. For function, we just need to define the function name and perimeters.
 //:
 //: We use `protocol` to create and define a protocol
@@ -28,7 +26,7 @@ class StudentA {
     }
 }
 
-//: Consider the example above, if we need to add functionality to display student record on the screen, we need to add the functionality, however, in this case we can create a protocol so that any other class can also make use of this feature.
+//: Consider the example above, if we need to add functionality to display student record on the screen, we need to add the functionality using method, however, in this case we can create a protocol so that any other class can also make use of this feature.
 
 protocol printToScreen {
     func printScreen()
@@ -98,7 +96,7 @@ let student2 = Student(lastName: "Hopkin", firstName: "Tom", studentID: "A122164
 student2.printScreen()
 student2.studentFullName
 
-//: A protocol can contain function and variables, please note that properties in protocol is similar to computed properties, you need to specify `set` and/or `get` for each properties
+//: A protocol can contain properties and function. Please note that properties in protocol is similar to computed properties, you need to specify `set` and/or `get` for each properties. For function, we need to specify the arguments' data type and return data type.
 
 protocol SampleProtocol {
     var capitalTextGet: String {get}
@@ -216,7 +214,11 @@ myNum.someNumberGetSet
 myNum.displayText()
 myNum.time2Number(5)
 
+//: Protocol is best used for interface that can be used across class instances, structures and enumerations. It can also be used for methods in a class that was overridden most often. By using protocol instead of method, we reduce the weight of a class and at the same time allows flexibility in the implementation of such function.
+//:
 
+//: **Extensions**
+//:
 //: We can use extension to add functionality of an existing class. Extensions do not allows stored properties but allows computed properties and additional functions.
 //:
 extension SomeClass1 {
