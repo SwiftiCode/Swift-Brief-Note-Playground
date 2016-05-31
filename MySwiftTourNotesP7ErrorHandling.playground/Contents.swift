@@ -1,7 +1,7 @@
 //: ## Error Handling
 //:
 //: + In, Swift, we use optional to test if a variable or instance is nil.
-//: + For functions and method, we use `throws` to see if the function or method works and cause of error.
+//: + For functions and method, we use `throws` to see if the function or method works and the cause of error if it fails.
 //: + For errors, we use any data type that conforms to the protocol ErrorType.
 //: + It is recommended to use enumeration so that we can group related errors together. Of course the enumeration must conform to ErrorType.
 //:
@@ -12,7 +12,7 @@ enum mySellError: ErrorType {
     case doNotHaveSuchItem
 }
 
-//: We create an inventory for online store
+//: + We create an inventory for online store
 struct onlineItem {
     var price: Double
     var stock: Int
@@ -40,7 +40,7 @@ struct buyStuff {
 
 
 
-//: We use `throw` to throw an error and we use `throws` to indicate a function that can throw an error.
+//: + We use `throw` to throw an error and we use `throws` to indicate a function that can throw an error.
 
 
 func executeBuy(transDetail: buyStuff) throws -> Bool {
@@ -75,9 +75,9 @@ func completeBuy(transDetail: buyStuff) -> onlineUser {
 
 
 
-//: To execute function with throws, we need to add `try` in front of the function execution expression.
+//: + To execute function with throws, we need to add `try` in front of the function execution expression.
 //:
-//: Finally, we use `do-catch` to perform check and handle error. Under `do`, we try functions that throws. The keyword `catch` is to detect error and the code after catch is to handle error.
+//: + Finally, we use `do-catch` to perform check and handle error. Under `do`, we try functions that throws. The keyword `catch` is to detect error and the code after catch is to handle error.
 
 var transaction1 = buyStuff(transactionID: 10001, user: user1, itemName: "iPhone", quantity: 1)
 
@@ -98,7 +98,7 @@ do {
 
 user1.funds
 
-//: For function that return value, we can use `try?`. If there is error the result will be nil, otherwise the return value will be registered
+//: + For function that return value, we can use `try?`. If there is an error, the result will be nil, otherwise the return value will be registered
 
 var transaction2 = buyStuff(transactionID: 10001, user: user1, itemName: "USB Cable", quantity: 5)
 
@@ -110,9 +110,9 @@ if let canBuy = try? executeBuy(transaction2) {
 
 user1.funds
 
-//: Please note that when you are using `try?`, if there is any error, the error will de discarded so it is no use in using `do-catch`.
+//: + Please note that when we use `try?` method, if there is any error, the error will de discarded so it is no use in using `do-catch`.
 //:
-//: We can also use keyword `defer` to write a block of code that is executed regardless if the function throws an error.
+//: + We can also use keyword `defer` to write a block of code that is executed regardless if the function throws an error.
 
 func executeBuy2(transDetail: buyStuff) throws -> Bool {
     if let buyItem = onlineInventory[transDetail.itemName] {
@@ -137,6 +137,7 @@ func executeBuy2(transDetail: buyStuff) throws -> Bool {
         return true
         
     } else {
+        
         throw mySellError.doNotHaveSuchItem
     }
     
