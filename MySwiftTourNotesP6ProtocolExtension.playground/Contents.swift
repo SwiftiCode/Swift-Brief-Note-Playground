@@ -278,6 +278,5 @@ extension SomeClass2: SampleProtocol {
 
 //: If we use protocol adoption in an extension, we must make sure that all properties in the protocol must be setup as computed properties with get and set clearly define.
 
-
 /* ---- End ---- */
 
