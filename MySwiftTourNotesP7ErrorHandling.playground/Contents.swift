@@ -110,7 +110,7 @@ if let canBuy = try? executeBuy(transaction2) {
 
 user1.funds
 
-//: + Please note that when we use `try?` method, if there is any error, the error will de discarded so it is no use in using `do-catch`.
+//: + Please note that when we use `try?` method, if there is any error, the error will be discarded so it is no use in using `do-catch`.
 //:
 //: + We can also use keyword `defer` to write a block of code that is executed regardless if the function throws an error.
 func executeBuy2(transDetail: buyStuff) throws -> Bool {
