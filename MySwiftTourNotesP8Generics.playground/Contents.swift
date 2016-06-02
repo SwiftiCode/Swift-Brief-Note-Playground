@@ -3,7 +3,7 @@
 //: + Generics are those data type that is unknown.
 //: + We can create generics in the forms of function, class, methods, structure and enumeration
 //: + The purpose of creating generic form of function, methods or class is for developer to apply different data type to the function, method or class.
-//: + To define generic, we need to apply a postfix with a `<T>` after the function name where T is the placeholder name for generic.
+//: + To define generics, we need to apply a postfix with a `<T>` after the function name where T is the placeholder name for generic.
 func print10Times<T> (x: T) {
     for _ in 1...10 {
         print(x)
